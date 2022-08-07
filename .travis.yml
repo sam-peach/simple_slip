@@ -1,0 +1,13 @@
+language: rust
+sudo: false
+env:
+  global:
+    - PROJECT_NAME: simple_slip
+    - RUST_BACKTRACE: full
+script:
+  - cargo build --verbose --all
+  - cargo test --verbose --all
+  - cargo doc --verbose --all
+notifications:
+  email:
+    on_success: never
