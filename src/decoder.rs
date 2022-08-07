@@ -48,7 +48,8 @@ pub fn decode(encoded_buffer: &[u8]) -> Result<Vec<u8>, SlipError> {
     }
   }
 
-  Ok(decoded_buffer)
+  let test: Vec<u8> = Vec::new();
+  Ok(test)
 }
 
 fn find_delimiter(buffer: &[u8]) -> Result<usize, SlipError> {
