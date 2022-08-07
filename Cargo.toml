@@ -2,5 +2,12 @@
 name = "simple_slip"
 version = "0.1.0"
 edition = "2021"
+description = "A small and simple library for SLIP encoding"
+authors = ["Sam Peach"]
+repository = "https://github.com/sam-peach/simple_slip"
+license = "MIT OR Apache-2.0"
+keywords = ["slip", "encoding", "serial"]
+categories = ["encoding"]
 
-
+[badges]
+maintenance = { status = "passively-maintained" }
