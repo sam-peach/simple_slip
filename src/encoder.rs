@@ -12,7 +12,7 @@ use super::*;
 /// use simple_slip::encode;
 ///
 /// let input: Vec<u8> = vec![0x01, 0xDB, 0x49, 0xC0, 0x15];
-/// let expected: Vec<u8> = vec![0xC0, 0x01, 0xDB, 0xDD, 0x49, 0xDB, 0xDC, 0x15];
+/// let expected: Vec<u8> = vec![0xC0, 0x01, 0xDB, 0xDD, 0x49, 0xDB, 0xDC, 0x15, 0xC0];
 ///
 /// let result: Vec<u8> = encode(&input).unwrap();
 ///
@@ -35,6 +35,8 @@ pub fn encode(raw_buffer: &[u8]) -> Result<Vec<u8>, SlipError> {
     }
   }
 
+  encoded_buffer.push(END);
+
   Ok(encoded_buffer)
 }
 
@@ -44,7 +46,7 @@ mod tests {
   #[test]
   fn encode_data() {
     let input: Vec<u8> = vec![0x01, ESC, 0x49, END, 0x15];
-    let expected: Vec<u8> = vec![END, 0x01, ESC, ESC_ESC, 0x49, ESC, ESC_END, 0x15];
+    let expected: Vec<u8> = vec![END, 0x01, ESC, ESC_ESC, 0x49, ESC, ESC_END, 0x15, END];
 
     let res: Vec<u8> = encode(&input).unwrap();
     assert_eq!(res, expected);

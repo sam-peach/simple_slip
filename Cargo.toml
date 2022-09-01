@@ -1,6 +1,6 @@
 [package]
 name = "simple_slip"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description = "A small and simple library for SLIP encoding"
 authors = ["Sam Peach"]
